@@ -62,7 +62,6 @@ generator      | Class<? extends IKeyGenerator> |  缓存键值自定义生成�
 # 轻量管理端
 访问地址：http://localhost:8080/cache
 <br>管理端批量或前缀清除sino-cache注册的缓存，同时也可以快速预览缓存的数据内容，也可以对缓存的失效时间进行延长。
-![img](http://ofsc32t59.bkt.clouddn.com/17-05-22/1495418425204.jpg)
 # Demo
 1、在src/main/test中展开的相关示例代码
 >CacheTest是核心启动类
@@ -84,7 +83,7 @@ redis.port = 6379
 redis.password = 
 redis.timeout = 2000
 redis.database = 0
-redis.sysName = sino
+redis.sysName = sino-cache
 redis.enable = true
 ```
 ##### applicationContext.xml
