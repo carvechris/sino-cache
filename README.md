@@ -27,14 +27,14 @@ redis:
     password:
     timeout: 2000
     # 服务或应用名
-    sysName: ace
+    sysName: sino
     enable: true
     database: 0
 ```
 ## 缓存开启
 2、开启AOP扫描
 ```
-@EnableAceCache
+@EnableIfsCache
 ```
 ## 缓存使用
 3、在Service上进行@Cache注解或@CacheClear注解
@@ -57,11 +57,11 @@ generator      | Class<? extends IKeyGenerator> |  缓存键值自定义生成�
 ## 默认key动态表达式说明
 表达式举例 | 说明 | 举例
 -------------  |------------- | -----
-@Cache(key="user:{1}")<br>public User getUserByAccount(String account) | {1}表示获取第一个参数值<br>{2}表示获取第二个参数值<br>……依此类推 | 若：account = ace，则：key = user:ace
-@CacheClear(pre="user{1.account}")<br>User saveOrUpdate(User user)|{1}表示获取第一个参数值<br>{1.xx}表示获取第一个参数中的xxx属性|若：account=ace，则：key = user:ace
+@Cache(key="user:{1}")<br>public User getUserByAccount(String account) | {1}表示获取第一个参数值<br>{2}表示获取第二个参数值<br>……依此类推 | 若：account = sino，则：key = user:sino
+@CacheClear(pre="user{1.account}")<br>User saveOrUpdate(User user)|{1}表示获取第一个参数值<br>{1.xx}表示获取第一个参数中的xxx属性|若：account=sino，则：key = user:sino
 # 轻量管理端
 访问地址：http://localhost:8080/cache
-<br>管理端批量或前缀清除ace-cache注册的缓存，同时也可以快速预览缓存的数据内容，也可以对缓存的失效时间进行延长。
+<br>管理端批量或前缀清除sino-cache注册的缓存，同时也可以快速预览缓存的数据内容，也可以对缓存的失效时间进行延长。
 ![img](http://ofsc32t59.bkt.clouddn.com/17-05-22/1495418425204.jpg)
 # Demo
 1、在src/main/test中展开的相关示例代码
@@ -84,7 +84,7 @@ redis.port = 6379
 redis.password = 
 redis.timeout = 2000
 redis.database = 0
-redis.sysName = ace
+redis.sysName = sino
 redis.enable = true
 ```
 ##### applicationContext.xml
